@@ -1,0 +1,1924 @@
+import { type NextRequest, NextResponse } from "next/server"
+
+// This would be a real AI-powered analysis in production
+// For demo purposes, we're returning mock data
+export async function POST(request: NextRequest) {
+  try {
+    // In a real implementation, we would:
+    // 1. Parse the uploaded resume (PDF, DOCX, etc.)
+    // 2. Extract skills, experience, education
+    // 3. Compare with job market requirements
+    // 4. Generate personalized recommendations
+
+    // Mock response data
+    const analysisResult = {
+      skillMatch: 68,
+      targetRole: "Full Stack Developer",
+      skillsToImprove: [
+        { name: "GraphQL", currentLevel: 15, requiredLevel: 70, priority: "High" },
+        { name: "Docker", currentLevel: 25, requiredLevel: 65, priority: "High" },
+        { name: "TypeScript", currentLevel: 40, requiredLevel: 75, priority: "Medium" },
+        { name: "AWS", currentLevel: 30, requiredLevel: 60, priority: "Medium" },
+        { name: "CI/CD", currentLevel: 20, requiredLevel: 55, priority: "Medium" },
+      ],
+      estimatedTimeToTarget: "4 months",
+      suggestedProjects: 5,
+      skillBreakdown: {
+        frontend: [
+          { name: "HTML/CSS", currentLevel: 90, requiredLevel: 85 },
+          { name: "JavaScript", currentLevel: 85, requiredLevel: 90 },
+          { name: "React", currentLevel: 75, requiredLevel: 85 },
+          { name: "TypeScript", currentLevel: 40, requiredLevel: 75 },
+        ],
+        backend: [
+          { name: "Node.js", currentLevel: 70, requiredLevel: 80 },
+          { name: "Express", currentLevel: 65, requiredLevel: 75 },
+          { name: "MongoDB", currentLevel: 60, requiredLevel: 70 },
+          { name: "GraphQL", currentLevel: 15, requiredLevel: 70 },
+        ],
+        devops: [
+          { name: "Git", currentLevel: 80, requiredLevel: 75 },
+          { name: "Docker", currentLevel: 25, requiredLevel: 65 },
+          { name: "CI/CD", currentLevel: 20, requiredLevel: 55 },
+          { name: "AWS", currentLevel: 30, requiredLevel: 60 },
+        ],
+      },
+      roadmap: {
+        month1: [
+          {
+            name: "TypeScript Fundamentals",
+            duration: "2 weeks",
+            completed: true,
+            description: "Learn TypeScript basics and integration with React",
+          },
+          {
+            name: "GraphQL Basics",
+            duration: "2 weeks",
+            completed: false,
+            description: "Understand GraphQL concepts and basic queries",
+          },
+        ],
+        month2: [
+          {
+            name: "Docker Fundamentals",
+            duration: "2 weeks",
+            completed: false,
+            description: "Learn Docker basics and containerization",
+          },
+          {
+            name: "Advanced GraphQL",
+            duration: "2 weeks",
+            completed: false,
+            description: "Build GraphQL APIs with Apollo Server",
+          },
+        ],
+        month3: [
+          {
+            name: "AWS Fundamentals",
+            duration: "2 weeks",
+            completed: false,
+            description: "Learn AWS core services (S3, EC2, Lambda)",
+          },
+          {
+            name: "CI/CD Pipelines",
+            duration: "2 weeks",
+            completed: false,
+            description: "Set up automated testing and deployment pipelines",
+          },
+        ],
+        month4: [
+          {
+            name: "Full Stack Project",
+            duration: "4 weeks",
+            completed: false,
+            description: "Build a complete project integrating all learned technologies",
+          },
+        ],
+      },
+      projects: [
+        {
+          title: "Full-Stack E-Commerce Platform",
+          impact: "High",
+          description: "Build a complete e-commerce solution with user authentication, product catalog, and checkout",
+          skills: ["React", "TypeScript", "Node.js", "GraphQL", "Docker"],
+        },
+        {
+          title: "Real-time Chat Application",
+          impact: "Medium",
+          description: "Create a real-time messaging app with WebSockets and user presence indicators",
+          skills: ["React", "WebSockets", "Node.js", "Express", "MongoDB"],
+        },
+        {
+          title: "Serverless API with AWS",
+          impact: "High",
+          description: "Build a serverless API using AWS Lambda, API Gateway, and DynamoDB",
+          skills: ["AWS", "Serverless", "Node.js", "DynamoDB", "CI/CD"],
+        },
+        {
+          title: "GraphQL API with Apollo",
+          impact: "High",
+          description: "Create a GraphQL API with Apollo Server and integrate it with a React frontend",
+          skills: ["GraphQL", "Apollo", "React", "Node.js", "MongoDB"],
+        },
+        {
+          title: "Containerized Microservices",
+          impact: "Advanced",
+          description: "Build a microservices architecture using Docker and orchestrate with Docker Compose",
+          skills: ["Docker", "Microservices", "Node.js", "API Design", "CI/CD"],
+        },
+      ],
+      resources: {
+        typescript: [
+          {
+            title: "TypeScript Handbook",
+            type: "Documentation",
+            level: "Beginner to Advanced",
+            isPremium: false,
+            description: "Official TypeScript documentation",
+          },
+          {
+            title: "TypeScript Deep Dive",
+            type: "eBook",
+            level: "Intermediate to Advanced",
+            isPremium: false,
+            description: "Advanced TypeScript concepts and patterns",
+          },
+        ],
+        graphql: [
+          {
+            title: "GraphQL: Zero to Production",
+            type: "Video Course",
+            level: "Beginner to Intermediate",
+            isPremium: true,
+            description: "Comprehensive GraphQL course",
+          },
+          {
+            title: "Apollo GraphQL Documentation",
+            type: "Documentation",
+            level: "All Levels",
+            isPremium: false,
+            description: "Official Apollo GraphQL guides and API reference",
+          },
+        ],
+        docker: [
+          {
+            title: "Docker for Developers",
+            type: "eBook",
+            level: "Beginner",
+            isPremium: false,
+            description: "Practical guide to Docker containerization",
+          },
+          {
+            title: "Docker & Kubernetes: The Complete Guide",
+            type: "Video Course",
+            level: "Beginner to Advanced",
+            isPremium: true,
+            description: "Comprehensive course on containerization",
+          },
+        ],
+        aws: [
+          {
+            title: "AWS Certified Developer",
+            type: "Video Course",
+            level: "Intermediate",
+            isPremium: true,
+            description: "Official AWS certification preparation",
+          },
+          {
+            title: "AWS Documentation",
+            type: "Documentation",
+            level: "All Levels",
+            isPremium: false,
+            description: "Official AWS service documentation",
+          },
+        ],
+      },
+    }
+
+    // Simulate processing time
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+
+    return NextResponse.json(analysisResult)
+  } catch (error) {
+    console.error("Error analyzing resume:", error)
+    return NextResponse.json({ error: "Failed to analyze resume" }, { status: 500 })
+  }
+}
+"use client"
+
+import { useState } from "react"
+import { BarChart3, FileText, Lightbulb, Rocket } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Progress } from "@/components/ui/progress"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { DashboardHeader } from "@/components/dashboard-header"
+import { DashboardShell } from "@/components/dashboard-shell"
+import { ResumeUploader } from "@/components/resume-uploader"
+import { SkillGapChart } from "@/components/skill-gap-chart"
+import { SkillRoadmap } from "@/components/skill-roadmap"
+import { ProjectSuggestions } from "@/components/project-suggestions"
+import { ResourcesList } from "@/components/resources-list"
+
+export default function DashboardPage() {
+  const [hasUploadedResume, setHasUploadedResume] = useState(false)
+
+  const handleResumeUpload = (file: File) => {
+    // In a real app, this would send the file to the backend for processing
+    console.log("Resume uploaded:", file.name)
+    setHasUploadedResume(true)
+  }
+
+  return (
+    <DashboardShell>
+      <DashboardHeader heading="Dashboard" text="Upload your resume and discover your skill gaps." />
+
+      {!hasUploadedResume ? (
+        <ResumeUploader onUpload={handleResumeUpload} />
+      ) : (
+        <Tabs defaultValue="overview" className="space-y-4">
+          <TabsList>
+            <TabsTrigger value="overview">Overview</TabsTrigger>
+            <TabsTrigger value="skills">Skills Analysis</TabsTrigger>
+            <TabsTrigger value="roadmap">Learning Roadmap</TabsTrigger>
+            <TabsTrigger value="projects">Project Ideas</TabsTrigger>
+            <TabsTrigger value="resources">Resources</TabsTrigger>
+          </TabsList>
+          <TabsContent value="overview" className="space-y-4">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">Current Skill Match</CardTitle>
+                  <FileText className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">68%</div>
+                  <p className="text-xs text-muted-foreground">Match to your target role: Full Stack Developer</p>
+                  <Progress value={68} className="mt-3" />
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">Skills to Develop</CardTitle>
+                  <BarChart3 className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">7</div>
+                  <p className="text-xs text-muted-foreground">Key skills identified for improvement</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">Estimated Timeline</CardTitle>
+                  <Rocket className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">4 months</div>
+                  <p className="text-xs text-muted-foreground">To reach 90% skill match</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">Suggested Projects</CardTitle>
+                  <Lightbulb className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">5</div>
+                  <p className="text-xs text-muted-foreground">Hands-on projects to build your portfolio</p>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
+              <Card className="col-span-4">
+                <CardHeader>
+                  <CardTitle>Skill Gap Analysis</CardTitle>
+                  <CardDescription>Your current skills compared to target role requirements</CardDescription>
+                </CardHeader>
+                <CardContent className="pl-2">
+                  <SkillGapChart />
+                </CardContent>
+              </Card>
+              <Card className="col-span-3">
+                <CardHeader>
+                  <CardTitle>Top Skills to Develop</CardTitle>
+                  <CardDescription>Focus on these skills to increase your employability</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">GraphQL</div>
+                        <div className="text-sm text-muted-foreground">Priority: High</div>
+                      </div>
+                      <Progress value={15} className="h-2" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">Docker</div>
+                        <div className="text-sm text-muted-foreground">Priority: High</div>
+                      </div>
+                      <Progress value={25} className="h-2" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">TypeScript</div>
+                        <div className="text-sm text-muted-foreground">Priority: Medium</div>
+                      </div>
+                      <Progress value={40} className="h-2" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">AWS</div>
+                        <div className="text-sm text-muted-foreground">Priority: Medium</div>
+                      </div>
+                      <Progress value={30} className="h-2" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">CI/CD</div>
+                        <div className="text-sm text-muted-foreground">Priority: Medium</div>
+                      </div>
+                      <Progress value={20} className="h-2" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+          <TabsContent value="skills" className="space-y-4">
+            <Card>
+              <CardHeader>
+                <CardTitle>Detailed Skills Analysis</CardTitle>
+                <CardDescription>
+                  Comprehensive breakdown of your skills compared to industry requirements
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-8">
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-medium">Frontend Development</h3>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">HTML/CSS</div>
+                        <div className="text-sm text-muted-foreground">90%</div>
+                      </div>
+                      <Progress value={90} className="h-2" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">JavaScript</div>
+                        <div className="text-sm text-muted-foreground">85%</div>
+                      </div>
+                      <Progress value={85} className="h-2" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">React</div>
+                        <div className="text-sm text-muted-foreground">75%</div>
+                      </div>
+                      <Progress value={75} className="h-2" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">TypeScript</div>
+                        <div className="text-sm text-muted-foreground">40%</div>
+                      </div>
+                      <Progress value={40} className="h-2" />
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-medium">Backend Development</h3>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">Node.js</div>
+                        <div className="text-sm text-muted-foreground">70%</div>
+                      </div>
+                      <Progress value={70} className="h-2" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">Express</div>
+                        <div className="text-sm text-muted-foreground">65%</div>
+                      </div>
+                      <Progress value={65} className="h-2" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">MongoDB</div>
+                        <div className="text-sm text-muted-foreground">60%</div>
+                      </div>
+                      <Progress value={60} className="h-2" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">GraphQL</div>
+                        <div className="text-sm text-muted-foreground">15%</div>
+                      </div>
+                      <Progress value={15} className="h-2" />
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-medium">DevOps & Tools</h3>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">Git</div>
+                        <div className="text-sm text-muted-foreground">80%</div>
+                      </div>
+                      <Progress value={80} className="h-2" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">Docker</div>
+                        <div className="text-sm text-muted-foreground">25%</div>
+                      </div>
+                      <Progress value={25} className="h-2" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">CI/CD</div>
+                        <div className="text-sm text-muted-foreground">20%</div>
+                      </div>
+                      <Progress value={20} className="h-2" />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm font-medium">AWS</div>
+                        <div className="text-sm text-muted-foreground">30%</div>
+                      </div>
+                      <Progress value={30} className="h-2" />
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+          <TabsContent value="roadmap" className="space-y-4">
+            <Card>
+              <CardHeader>
+                <CardTitle>Your Learning Roadmap</CardTitle>
+                <CardDescription>A personalized plan to help you reach your career goals</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <SkillRoadmap />
+              </CardContent>
+            </Card>
+          </TabsContent>
+          <TabsContent value="projects" className="space-y-4">
+            <Card>
+              <CardHeader>
+                <CardTitle>Recommended Projects</CardTitle>
+                <CardDescription>Hands-on projects to build your portfolio and develop key skills</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ProjectSuggestions />
+              </CardContent>
+            </Card>
+          </TabsContent>
+          <TabsContent value="resources" className="space-y-4">
+            <Card>
+              <CardHeader>
+                <CardTitle>Learning Resources</CardTitle>
+                <CardDescription>Curated resources to help you develop the skills you need</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ResourcesList />
+              </CardContent>
+            </Card>
+          </TabsContent>
+        </Tabs>
+      )}
+    </DashboardShell>
+  )
+}
+
+import Link from "next/link"
+import { BrainCircuit } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+
+export default function LoginPage() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-muted/40 p-4">
+      <Card className="w-full max-w-md">
+        <CardHeader className="space-y-2 text-center">
+          <div className="flex justify-center">
+            <BrainCircuit className="h-10 w-10 text-primary" />
+          </div>
+          <CardTitle className="text-2xl">Log in to SkillGap Analyzer</CardTitle>
+          <CardDescription>Enter your email and password to access your account</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" placeholder="name@example.com" type="email" />
+          </div>
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <Label htmlFor="password">Password</Label>
+              <Link className="text-sm text-primary underline-offset-4 hover:underline" href="#">
+                Forgot password?
+              </Link>
+            </div>
+            <Input id="password" type="password" />
+          </div>
+        </CardContent>
+        <CardFooter className="flex flex-col space-y-4">
+          <Button className="w-full">Log in</Button>
+          <div className="text-center text-sm">
+            Don&apos;t have an account?{" "}
+            <Link className="text-primary underline-offset-4 hover:underline" href="/signup">
+              Sign up
+            </Link>
+          </div>
+        </CardFooter>
+      </Card>
+    </div>
+  )
+}
+
+import Link from "next/link"
+import { BrainCircuit } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Checkbox } from "@/components/ui/checkbox"
+
+export default function SignupPage() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-muted/40 p-4">
+      <Card className="w-full max-w-md">
+        <CardHeader className="space-y-2 text-center">
+          <div className="flex justify-center">
+            <BrainCircuit className="h-10 w-10 text-primary" />
+          </div>
+          <CardTitle className="text-2xl">Create an account</CardTitle>
+          <CardDescription>Enter your information to create an account</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="first-name">First name</Label>
+              <Input id="first-name" placeholder="John" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="last-name">Last name</Label>
+              <Input id="last-name" placeholder="Doe" />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" placeholder="name@example.com" type="email" />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="password">Password</Label>
+            <Input id="password" type="password" />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="confirm-password">Confirm password</Label>
+            <Input id="confirm-password" type="password" />
+          </div>
+          <div className="flex items-center space-x-2">
+            <Checkbox id="terms" />
+            <label
+              htmlFor="terms"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              I agree to the{" "}
+              <Link href="#" className="text-primary underline underline-offset-4">
+                terms of service
+              </Link>{" "}
+              and{" "}
+              <Link href="#" className="text-primary underline underline-offset-4">
+                privacy policy
+              </Link>
+            </label>
+          </div>
+        </CardContent>
+        <CardFooter className="flex flex-col space-y-4">
+          <Button className="w-full">Create account</Button>
+          <div className="text-center text-sm">
+            Already have an account?{" "}
+            <Link className="text-primary underline-offset-4 hover:underline" href="/login">
+              Log in
+            </Link>
+          </div>
+        </CardFooter>
+      </Card>
+    </div>
+  )
+}
+
+import Link from "next/link"
+import { ArrowRight, BarChart3, BookOpen, BrainCircuit, FileText, Lightbulb, Rocket } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+
+export default function Home() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <header className="px-4 lg:px-6 h-16 flex items-center justify-between border-b">
+        <Link className="flex items-center gap-2 font-semibold" href="#">
+          <BrainCircuit className="h-6 w-6" />
+          <span>SkillGap Analyzer</span>
+        </Link>
+        <nav className="hidden md:flex gap-6">
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#features">
+            Features
+          </Link>
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#how-it-works">
+            How It Works
+          </Link>
+          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#testimonials">
+            Testimonials
+          </Link>
+        </nav>
+        <div className="flex gap-4">
+          <Link href="/login">
+            <Button variant="ghost" size="sm">
+              Log In
+            </Button>
+          </Link>
+          <Link href="/signup">
+            <Button size="sm">Sign Up</Button>
+          </Link>
+        </div>
+      </header>
+      <main className="flex-1">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-background to-muted">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                    Identify Your Skill Gaps & Accelerate Your Career
+                  </h1>
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                    Upload your resume, discover your skill gaps, and get personalized recommendations to advance your
+                    career with our AI-powered skill analysis platform.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Link href="/dashboard">
+                    <Button size="lg" className="gap-1">
+                      Analyze Your Resume <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link href="#how-it-works">
+                    <Button size="lg" variant="outline">
+                      Learn More
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="relative w-full max-w-[500px] aspect-video rounded-xl bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 p-1">
+                  <div className="absolute inset-0 rounded-lg bg-white/90 dark:bg-black/80 backdrop-blur-sm flex items-center justify-center">
+                    <div className="w-full max-w-[400px] space-y-4 p-4">
+                      <div className="h-8 w-full rounded-md bg-primary/10 flex items-center px-3">
+                        <FileText className="h-4 w-4 mr-2 text-primary" />
+                        <span className="text-sm">Upload your resume to get started</span>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="h-3 w-3/4 rounded-full bg-muted" />
+                        <div className="h-3 w-full rounded-full bg-muted" />
+                        <div className="h-3 w-2/3 rounded-full bg-muted" />
+                      </div>
+                      <div className="flex justify-end">
+                        <div className="h-8 w-24 rounded-md bg-primary/80 flex items-center justify-center">
+                          <span className="text-xs text-primary-foreground">Analyze</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Features</div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">How We Help You Succeed</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Our platform analyzes your skills and provides personalized recommendations to help you reach your
+                  career goals.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+              <div className="flex flex-col items-center space-y-4 rounded-lg border p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                  <FileText className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold">Resume Analysis</h3>
+                <p className="text-center text-muted-foreground">
+                  Upload your resume and our AI will extract and analyze your skills, experience, and qualifications.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4 rounded-lg border p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                  <BarChart3 className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold">Skill Gap Detection</h3>
+                <p className="text-center text-muted-foreground">
+                  Identify the exact skills you need to develop to reach your career goals and stand out to employers.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4 rounded-lg border p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                  <Rocket className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold">Personalized Roadmap</h3>
+                <p className="text-center text-muted-foreground">
+                  Get a customized learning path with resources and timelines tailored to your specific needs and goals.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4 rounded-lg border p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                  <Lightbulb className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold">Project Suggestions</h3>
+                <p className="text-center text-muted-foreground">
+                  Receive ideas for hands-on projects that will help you develop the skills you need and build your
+                  portfolio.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4 rounded-lg border p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                  <BookOpen className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold">Learning Resources</h3>
+                <p className="text-center text-muted-foreground">
+                  Access curated courses, tutorials, and materials to help you efficiently acquire the skills you need.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4 rounded-lg border p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                  <BrainCircuit className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold">AI-Powered Insights</h3>
+                <p className="text-center text-muted-foreground">
+                  Leverage advanced AI to get insights about industry trends and in-demand skills for your target roles.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-background px-3 py-1 text-sm">How It Works</div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Simple Process, Powerful Results</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Our platform makes it easy to identify and close your skill gaps in just a few steps.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 md:grid-cols-3">
+              <div className="flex flex-col items-center space-y-4 rounded-lg bg-background p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <span className="text-xl font-bold">1</span>
+                </div>
+                <h3 className="text-xl font-bold">Upload Your Resume</h3>
+                <p className="text-center text-muted-foreground">
+                  Simply upload your resume or CV in PDF, DOCX, or TXT format to our secure platform.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4 rounded-lg bg-background p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <span className="text-xl font-bold">2</span>
+                </div>
+                <h3 className="text-xl font-bold">AI Analysis</h3>
+                <p className="text-center text-muted-foreground">
+                  Our AI analyzes your skills and compares them to your target role requirements to identify gaps.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4 rounded-lg bg-background p-6">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <span className="text-xl font-bold">3</span>
+                </div>
+                <h3 className="text-xl font-bold">Get Your Roadmap</h3>
+                <p className="text-center text-muted-foreground">
+                  Receive a personalized roadmap with learning resources and project ideas to close your skill gaps.
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <Link href="/dashboard">
+                <Button size="lg" className="gap-1">
+                  Try It Now <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+        <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Testimonials</div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Success Stories</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  See how our platform has helped professionals advance their careers.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+              <div className="flex flex-col justify-between space-y-4 rounded-lg border p-6">
+                <div className="space-y-2">
+                  <p className="text-muted-foreground">
+                    "The skill gap analysis was eye-opening. I was able to identify exactly what I needed to learn to
+                    transition into a data science role. Within 6 months, I landed my dream job!"
+                  </p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="rounded-full bg-muted h-10 w-10" />
+                  <div>
+                    <p className="text-sm font-medium">Sarah Johnson</p>
+                    <p className="text-xs text-muted-foreground">Data Scientist at TechCorp</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-between space-y-4 rounded-lg border p-6">
+                <div className="space-y-2">
+                  <p className="text-muted-foreground">
+                    "The project suggestions were incredibly helpful. I built three projects based on the
+                    recommendations and they became the highlight of my portfolio, helping me secure multiple
+                    interviews."
+                  </p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="rounded-full bg-muted h-10 w-10" />
+                  <div>
+                    <p className="text-sm font-medium">Michael Chen</p>
+                    <p className="text-xs text-muted-foreground">Frontend Developer at StartupX</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-between space-y-4 rounded-lg border p-6">
+                <div className="space-y-2">
+                  <p className="text-muted-foreground">
+                    "As someone changing careers, I was lost about what skills to focus on. The personalized roadmap
+                    gave me clear direction and saved me months of wasted effort on irrelevant skills."
+                  </p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="rounded-full bg-muted h-10 w-10" />
+                  <div>
+                    <p className="text-sm font-medium">Priya Patel</p>
+                    <p className="text-xs text-muted-foreground">UX Designer at DesignHub</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+        <p className="text-xs text-muted-foreground">© 2024 SkillGap Analyzer. All rights reserved.</p>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+          <Link className="text-xs hover:underline underline-offset-4" href="#">
+            Terms of Service
+          </Link>
+          <Link className="text-xs hover:underline underline-offset-4" href="#">
+            Privacy
+          </Link>
+        </nav>
+      </footer>
+    </div>
+  )
+}
+
+import type React from "react"
+interface DashboardHeaderProps {
+  heading: string
+  text?: string
+  children?: React.ReactNode
+}
+
+export function DashboardHeader({ heading, text, children }: DashboardHeaderProps) {
+  return (
+    <div className="flex items-center justify-between px-2">
+      <div className="grid gap-1">
+        <h1 className="text-2xl font-bold tracking-wide">{heading}</h1>
+        {text && <p className="text-muted-foreground">{text}</p>}
+      </div>
+      {children}
+    </div>
+  )
+}
+
+import type React from "react"
+import { BrainCircuit, Home, LayoutDashboard, Lightbulb, LogOut, Settings, User } from "lucide-react"
+import Link from "next/link"
+
+interface DashboardShellProps {
+  children: React.ReactNode
+}
+
+export function DashboardShell({ children }: DashboardShellProps) {
+  return (
+    <div className="flex min-h-screen flex-col">
+      <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
+        <Link href="/" className="flex items-center gap-2 font-semibold">
+          <BrainCircuit className="h-6 w-6" />
+          <span>SkillGap Analyzer</span>
+        </Link>
+        <nav className="ml-auto flex gap-2">
+          <Link href="/settings">
+            <Settings className="h-5 w-5 text-muted-foreground" />
+            <span className="sr-only">Settings</span>
+          </Link>
+          <Link href="/profile">
+            <User className="h-5 w-5 text-muted-foreground" />
+            <span className="sr-only">Profile</span>
+          </Link>
+        </nav>
+      </header>
+      <div className="flex flex-1">
+        <aside className="hidden w-[200px] flex-col border-r bg-muted/40 md:flex">
+          <nav className="grid gap-2 p-4 text-sm font-medium">
+            <Link href="/dashboard" className="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary">
+              <LayoutDashboard className="h-4 w-4" />
+              Dashboard
+            </Link>
+            <Link
+              href="/dashboard/skills"
+              className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground hover:text-foreground"
+            >
+              <User className="h-4 w-4" />
+              My Skills
+            </Link>
+            <Link
+              href="/dashboard/roadmap"
+              className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground hover:text-foreground"
+            >
+              <Home className="h-4 w-4" />
+              Roadmap
+            </Link>
+            <Link
+              href="/dashboard/projects"
+              className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground hover:text-foreground"
+            >
+              <Lightbulb className="h-4 w-4" />
+              Projects
+            </Link>
+            <Link
+              href="/logout"
+              className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground hover:text-foreground mt-auto"
+            >
+              <LogOut className="h-4 w-4" />
+              Logout
+            </Link>
+          </nav>
+        </aside>
+        <main className="flex-1 p-4 md:p-6">{children}</main>
+      </div>
+    </div>
+  )
+}
+
+import { ArrowRight, Github } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+
+export function ProjectSuggestions() {
+  return (
+    <div className="grid gap-6 md:grid-cols-2">
+      <Card>
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <CardTitle>Full-Stack E-Commerce Platform</CardTitle>
+            <Badge>High Impact</Badge>
+          </div>
+          <CardDescription>
+            Build a complete e-commerce solution with user authentication, product catalog, and checkout
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-2">
+            <h4 className="text-sm font-medium">Skills you'll develop:</h4>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="outline">React</Badge>
+              <Badge variant="outline">TypeScript</Badge>
+              <Badge variant="outline">Node.js</Badge>
+              <Badge variant="outline">GraphQL</Badge>
+              <Badge variant="outline">Docker</Badge>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Button variant="outline" size="sm" className="gap-1">
+            <Github className="h-4 w-4" />
+            View Starter
+          </Button>
+          <Button size="sm" className="gap-1">
+            Start Project <ArrowRight className="h-4 w-4" />
+          </Button>
+        </CardFooter>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <CardTitle>Real-time Chat Application</CardTitle>
+            <Badge>Medium Impact</Badge>
+          </div>
+          <CardDescription>
+            Create a real-time messaging app with WebSockets and user presence indicators
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-2">
+            <h4 className="text-sm font-medium">Skills you'll develop:</h4>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="outline">React</Badge>
+              <Badge variant="outline">WebSockets</Badge>
+              <Badge variant="outline">Node.js</Badge>
+              <Badge variant="outline">Express</Badge>
+              <Badge variant="outline">MongoDB</Badge>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Button variant="outline" size="sm" className="gap-1">
+            <Github className="h-4 w-4" />
+            View Starter
+          </Button>
+          <Button size="sm" className="gap-1">
+            Start Project <ArrowRight className="h-4 w-4" />
+          </Button>
+        </CardFooter>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <CardTitle>Serverless API with AWS</CardTitle>
+            <Badge>High Impact</Badge>
+          </div>
+          <CardDescription>Build a serverless API using AWS Lambda, API Gateway, and DynamoDB</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-2">
+            <h4 className="text-sm font-medium">Skills you'll develop:</h4>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="outline">AWS</Badge>
+              <Badge variant="outline">Serverless</Badge>
+              <Badge variant="outline">Node.js</Badge>
+              <Badge variant="outline">DynamoDB</Badge>
+              <Badge variant="outline">CI/CD</Badge>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Button variant="outline" size="sm" className="gap-1">
+            <Github className="h-4 w-4" />
+            View Starter
+          </Button>
+          <Button size="sm" className="gap-1">
+            Start Project <ArrowRight className="h-4 w-4" />
+          </Button>
+        </CardFooter>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <CardTitle>GraphQL API with Apollo</CardTitle>
+            <Badge>High Impact</Badge>
+          </div>
+          <CardDescription>
+            Create a GraphQL API with Apollo Server and integrate it with a React frontend
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-2">
+            <h4 className="text-sm font-medium">Skills you'll develop:</h4>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="outline">GraphQL</Badge>
+              <Badge variant="outline">Apollo</Badge>
+              <Badge variant="outline">React</Badge>
+              <Badge variant="outline">Node.js</Badge>
+              <Badge variant="outline">MongoDB</Badge>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Button variant="outline" size="sm" className="gap-1">
+            <Github className="h-4 w-4" />
+            View Starter
+          </Button>
+          <Button size="sm" className="gap-1">
+            Start Project <ArrowRight className="h-4 w-4" />
+          </Button>
+        </CardFooter>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <CardTitle>Containerized Microservices</CardTitle>
+            <Badge>Advanced</Badge>
+          </div>
+          <CardDescription>
+            Build a microservices architecture using Docker and orchestrate with Docker Compose
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-2">
+            <h4 className="text-sm font-medium">Skills you'll develop:</h4>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="outline">Docker</Badge>
+              <Badge variant="outline">Microservices</Badge>
+              <Badge variant="outline">Node.js</Badge>
+              <Badge variant="outline">API Design</Badge>
+              <Badge variant="outline">CI/CD</Badge>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Button variant="outline" size="sm" className="gap-1">
+            <Github className="h-4 w-4" />
+            View Starter
+          </Button>
+          <Button size="sm" className="gap-1">
+            Start Project <ArrowRight className="h-4 w-4" />
+          </Button>
+        </CardFooter>
+      </Card>
+    </div>
+  )
+}
+
+import { BookOpen, ExternalLink, FileText, Video } from "lucide-react"
+import Link from "next/link"
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
+export function ResourcesList() {
+  return (
+    <Tabs defaultValue="all">
+      <TabsList className="mb-4">
+        <TabsTrigger value="all">All Resources</TabsTrigger>
+        <TabsTrigger value="typescript">TypeScript</TabsTrigger>
+        <TabsTrigger value="graphql">GraphQL</TabsTrigger>
+        <TabsTrigger value="docker">Docker</TabsTrigger>
+        <TabsTrigger value="aws">AWS</TabsTrigger>
+      </TabsList>
+
+      <TabsContent value="all" className="space-y-4">
+        <div className="grid gap-4">
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-start justify-between">
+                <div>
+                  <CardTitle className="text-base">TypeScript Handbook</CardTitle>
+                  <CardDescription>Official TypeScript documentation</CardDescription>
+                </div>
+                <Badge className="ml-2">Free</Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="pb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <FileText className="h-4 w-4" />
+                <span>Documentation</span>
+                <span className="ml-auto">Beginner to Advanced</span>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href="#" className="w-full">
+                <Button variant="outline" size="sm" className="w-full gap-1">
+                  View Resource <ExternalLink className="h-3 w-3" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-start justify-between">
+                <div>
+                  <CardTitle className="text-base">GraphQL: Zero to Production</CardTitle>
+                  <CardDescription>Comprehensive GraphQL course</CardDescription>
+                </div>
+                <Badge className="ml-2">Premium</Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="pb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Video className="h-4 w-4" />
+                <span>Video Course</span>
+                <span className="ml-auto">Beginner to Intermediate</span>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href="#" className="w-full">
+                <Button variant="outline" size="sm" className="w-full gap-1">
+                  View Resource <ExternalLink className="h-3 w-3" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-start justify-between">
+                <div>
+                  <CardTitle className="text-base">Docker for Developers</CardTitle>
+                  <CardDescription>Practical guide to Docker containerization</CardDescription>
+                </div>
+                <Badge className="ml-2">Free</Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="pb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <BookOpen className="h-4 w-4" />
+                <span>eBook</span>
+                <span className="ml-auto">Beginner</span>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href="#" className="w-full">
+                <Button variant="outline" size="sm" className="w-full gap-1">
+                  View Resource <ExternalLink className="h-3 w-3" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-start justify-between">
+                <div>
+                  <CardTitle className="text-base">AWS Certified Developer</CardTitle>
+                  <CardDescription>Official AWS certification preparation</CardDescription>
+                </div>
+                <Badge className="ml-2">Premium</Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="pb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Video className="h-4 w-4" />
+                <span>Video Course</span>
+                <span className="ml-auto">Intermediate</span>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href="#" className="w-full">
+                <Button variant="outline" size="sm" className="w-full gap-1">
+                  View Resource <ExternalLink className="h-3 w-3" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+        </div>
+      </TabsContent>
+
+      <TabsContent value="typescript" className="space-y-4">
+        <div className="grid gap-4">
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-start justify-between">
+                <div>
+                  <CardTitle className="text-base">TypeScript Handbook</CardTitle>
+                  <CardDescription>Official TypeScript documentation</CardDescription>
+                </div>
+                <Badge className="ml-2">Free</Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="pb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <FileText className="h-4 w-4" />
+                <span>Documentation</span>
+                <span className="ml-auto">Beginner to Advanced</span>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href="#" className="w-full">
+                <Button variant="outline" size="sm" className="w-full gap-1">
+                  View Resource <ExternalLink className="h-3 w-3" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-start justify-between">
+                <div>
+                  <CardTitle className="text-base">TypeScript Deep Dive</CardTitle>
+                  <CardDescription>Advanced TypeScript concepts and patterns</CardDescription>
+                </div>
+                <Badge className="ml-2">Free</Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="pb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <BookOpen className="h-4 w-4" />
+                <span>eBook</span>
+                <span className="ml-auto">Intermediate to Advanced</span>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href="#" className="w-full">
+                <Button variant="outline" size="sm" className="w-full gap-1">
+                  View Resource <ExternalLink className="h-3 w-3" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+        </div>
+      </TabsContent>
+
+      <TabsContent value="graphql" className="space-y-4">
+        <div className="grid gap-4">
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-start justify-between">
+                <div>
+                  <CardTitle className="text-base">GraphQL: Zero to Production</CardTitle>
+                  <CardDescription>Comprehensive GraphQL course</CardDescription>
+                </div>
+                <Badge className="ml-2">Premium</Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="pb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Video className="h-4 w-4" />
+                <span>Video Course</span>
+                <span className="ml-auto">Beginner to Intermediate</span>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href="#" className="w-full">
+                <Button variant="outline" size="sm" className="w-full gap-1">
+                  View Resource <ExternalLink className="h-3 w-3" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-start justify-between">
+                <div>
+                  <CardTitle className="text-base">Apollo GraphQL Documentation</CardTitle>
+                  <CardDescription>Official Apollo GraphQL guides and API reference</CardDescription>
+                </div>
+                <Badge className="ml-2">Free</Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="pb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <FileText className="h-4 w-4" />
+                <span>Documentation</span>
+                <span className="ml-auto">All Levels</span>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href="#" className="w-full">
+                <Button variant="outline" size="sm" className="w-full gap-1">
+                  View Resource <ExternalLink className="h-3 w-3" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+        </div>
+      </TabsContent>
+
+      <TabsContent value="docker" className="space-y-4">
+        <div className="grid gap-4">
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-start justify-between">
+                <div>
+                  <CardTitle className="text-base">Docker for Developers</CardTitle>
+                  <CardDescription>Practical guide to Docker containerization</CardDescription>
+                </div>
+                <Badge className="ml-2">Free</Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="pb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <BookOpen className="h-4 w-4" />
+                <span>eBook</span>
+                <span className="ml-auto">Beginner</span>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href="#" className="w-full">
+                <Button variant="outline" size="sm" className="w-full gap-1">
+                  View Resource <ExternalLink className="h-3 w-3" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-start justify-between">
+                <div>
+                  <CardTitle className="text-base">Docker & Kubernetes: The Complete Guide</CardTitle>
+                  <CardDescription>Comprehensive course on containerization</CardDescription>
+                </div>
+                <Badge className="ml-2">Premium</Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="pb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Video className="h-4 w-4" />
+                <span>Video Course</span>
+                <span className="ml-auto">Beginner to Advanced</span>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href="#" className="w-full">
+                <Button variant="outline" size="sm" className="w-full gap-1">
+                  View Resource <ExternalLink className="h-3 w-3" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+        </div>
+      </TabsContent>
+
+      <TabsContent value="aws" className="space-y-4">
+        <div className="grid gap-4">
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-start justify-between">
+                <div>
+                  <CardTitle className="text-base">AWS Certified Developer</CardTitle>
+                  <CardDescription>Official AWS certification preparation</CardDescription>
+                </div>
+                <Badge className="ml-2">Premium</Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="pb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Video className="h-4 w-4" />
+                <span>Video Course</span>
+                <span className="ml-auto">Intermediate</span>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href="#" className="w-full">
+                <Button variant="outline" size="sm" className="w-full gap-1">
+                  View Resource <ExternalLink className="h-3 w-3" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-start justify-between">
+                <div>
+                  <CardTitle className="text-base">AWS Documentation</CardTitle>
+                  <CardDescription>Official AWS service documentation</CardDescription>
+                </div>
+                <Badge className="ml-2">Free</Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="pb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <FileText className="h-4 w-4" />
+                <span>Documentation</span>
+                <span className="ml-auto">All Levels</span>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href="#" className="w-full">
+                <Button variant="outline" size="sm" className="w-full gap-1">
+                  View Resource <ExternalLink className="h-3 w-3" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+        </div>
+      </TabsContent>
+    </Tabs>
+  )
+}
+
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
+import { FileText, Upload } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+
+interface ResumeUploaderProps {
+  onUpload: (file: File) => void
+}
+
+export function ResumeUploader({ onUpload }: ResumeUploaderProps) {
+  const [file, setFile] = useState<File | null>(null)
+  const [isDragging, setIsDragging] = useState(false)
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFile(e.target.files[0])
+    }
+  }
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault()
+    setIsDragging(true)
+  }
+
+  const handleDragLeave = () => {
+    setIsDragging(false)
+  }
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault()
+    setIsDragging(false)
+
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      setFile(e.dataTransfer.files[0])
+    }
+  }
+
+  const handleSubmit = () => {
+    if (file) {
+      onUpload(file)
+    }
+  }
+
+  return (
+    <Card className="w-full max-w-3xl mx-auto">
+      <CardHeader>
+        <CardTitle>Upload Your Resume</CardTitle>
+        <CardDescription>Upload your resume to get personalized skill gap analysis and recommendations</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div
+          className={`border-2 border-dashed rounded-lg p-12 text-center ${
+            isDragging ? "border-primary bg-primary/5" : "border-muted-foreground/25"
+          }`}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          onDrop={handleDrop}
+        >
+          <div className="flex flex-col items-center gap-4">
+            <div className="rounded-full bg-primary/10 p-4">
+              <Upload className="h-8 w-8 text-primary" />
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold">Drag & drop your resume</h3>
+              <p className="text-sm text-muted-foreground">Supports PDF, DOCX, and TXT files up to 5MB</p>
+            </div>
+            <div className="flex gap-2">
+              <label htmlFor="resume-upload" className="cursor-pointer">
+                <span className="text-sm text-primary underline">Browse files</span>
+                <input
+                  id="resume-upload"
+                  type="file"
+                  className="hidden"
+                  accept=".pdf,.docx,.doc,.txt"
+                  onChange={handleFileChange}
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+
+        {file && (
+          <div className="mt-4 flex items-center gap-2 rounded-lg border p-3">
+            <FileText className="h-5 w-5 text-primary" />
+            <div className="text-sm font-medium">{file.name}</div>
+            <div className="ml-auto text-xs text-muted-foreground">{(file.size / 1024 / 1024).toFixed(2)} MB</div>
+          </div>
+        )}
+      </CardContent>
+      <CardFooter>
+        <Button onClick={handleSubmit} disabled={!file} className="w-full">
+          Analyze Resume
+        </Button>
+      </CardFooter>
+    </Card>
+  )
+}
+
+"use client"
+
+import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+
+const data = [
+  {
+    name: "HTML/CSS",
+    current: 90,
+    required: 85,
+  },
+  {
+    name: "JavaScript",
+    current: 85,
+    required: 90,
+  },
+  {
+    name: "React",
+    current: 75,
+    required: 85,
+  },
+  {
+    name: "Node.js",
+    current: 70,
+    required: 80,
+  },
+  {
+    name: "TypeScript",
+    current: 40,
+    required: 75,
+  },
+  {
+    name: "GraphQL",
+    current: 15,
+    required: 70,
+  },
+  {
+    name: "Docker",
+    current: 25,
+    required: 65,
+  },
+  {
+    name: "AWS",
+    current: 30,
+    required: 60,
+  },
+]
+
+export function SkillGapChart() {
+  return (
+    <ResponsiveContainer width="100%" height={350}>
+      <BarChart data={data} layout="vertical" margin={{ top: 10, right: 10, left: 20, bottom: 10 }}>
+        <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+        <XAxis type="number" domain={[0, 100]} />
+        <YAxis dataKey="name" type="category" width={100} />
+        <Tooltip formatter={(value) => [`${value}%`, ""]} labelFormatter={(label) => `Skill: ${label}`} />
+        <Legend />
+        <Bar dataKey="current" name="Your Level" fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} />
+        <Bar dataKey="required" name="Required Level" fill="hsl(var(--muted-foreground))" radius={[0, 4, 4, 0]} />
+      </BarChart>
+    </ResponsiveContainer>
+  )
+}
+
+"use client"
+
+import { CheckCircle2, Circle } from "lucide-react"
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Progress } from "@/components/ui/progress"
+
+export function SkillRoadmap() {
+  return (
+    <div className="space-y-8">
+      <div className="space-y-4">
+        <h3 className="text-lg font-medium">Month 1: Foundation</h3>
+        <div className="space-y-4">
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">TypeScript Fundamentals</CardTitle>
+              <CardDescription>Estimated time: 2 weeks</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-start gap-4">
+                <div className="mt-0.5">
+                  <CheckCircle2 className="h-5 w-5 text-primary" />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm">Learn TypeScript basics and integration with React</p>
+                  <Progress value={100} className="h-2" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">GraphQL Basics</CardTitle>
+              <CardDescription>Estimated time: 2 weeks</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-start gap-4">
+                <div className="mt-0.5">
+                  <Circle className="h-5 w-5 text-muted-foreground" />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm">Understand GraphQL concepts and basic queries</p>
+                  <Progress value={0} className="h-2" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <h3 className="text-lg font-medium">Month 2: Intermediate Skills</h3>
+        <div className="space-y-4">
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">Docker Fundamentals</CardTitle>
+              <CardDescription>Estimated time: 2 weeks</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-start gap-4">
+                <div className="mt-0.5">
+                  <Circle className="h-5 w-5 text-muted-foreground" />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm">Learn Docker basics and containerization</p>
+                  <Progress value={0} className="h-2" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">Advanced GraphQL</CardTitle>
+              <CardDescription>Estimated time: 2 weeks</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-start gap-4">
+                <div className="mt-0.5">
+                  <Circle className="h-5 w-5 text-muted-foreground" />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm">Build GraphQL APIs with Apollo Server</p>
+                  <Progress value={0} className="h-2" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <h3 className="text-lg font-medium">Month 3: Advanced Development</h3>
+        <div className="space-y-4">
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">AWS Fundamentals</CardTitle>
+              <CardDescription>Estimated time: 2 weeks</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-start gap-4">
+                <div className="mt-0.5">
+                  <Circle className="h-5 w-5 text-muted-foreground" />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm">Learn AWS core services (S3, EC2, Lambda)</p>
+                  <Progress value={0} className="h-2" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">CI/CD Pipelines</CardTitle>
+              <CardDescription>Estimated time: 2 weeks</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-start gap-4">
+                <div className="mt-0.5">
+                  <Circle className="h-5 w-5 text-muted-foreground" />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm">Set up automated testing and deployment pipelines</p>
+                  <Progress value={0} className="h-2" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <h3 className="text-lg font-medium">Month 4: Project Integration</h3>
+        <div className="space-y-4">
+          <Card>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">Full Stack Project</CardTitle>
+              <CardDescription>Estimated time: 4 weeks</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-start gap-4">
+                <div className="mt-0.5">
+                  <Circle className="h-5 w-5 text-muted-foreground" />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm">Build a complete project integrating all learned technologies</p>
+                  <Progress value={0} className="h-2" />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+}
+
+
+
+
