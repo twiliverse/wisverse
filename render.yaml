@@ -1,0 +1,18 @@
+databases:
+  - name: backend-db
+    plan: free
+services:
+  - type: web
+    name: backend-service
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "skillgap app:app"
+    envVars:
+      - key: API_KEY
+        value: "your_api_key_here"
+databases:
+  - name: backend-db
+    plan: free
+
+
